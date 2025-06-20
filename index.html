@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clínica Veterinária em Itaí/SP especializada em consultas, cirurgias, diagnóstico e internação para cães e gatos. Agende sua consulta!" />
+  <meta name="keywords" content="veterinário Itaí, clínica veterinária, consulta veterinária, cirurgia veterinária, exames veterinários, diagnóstico veterinário, internação animal, cães, gatos, pet, saúde animal, Itaí SP" />
+  <meta name="author" content="Caiovet" />
+  <title>Caiovet - Clínica Veterinária</title>
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+  <meta property="og:title" content="Caiovet - Clínica Veterinária" />
+  <meta property="og:description" content="Clínica veterinária em Itaí/SP especializada em consultas, cirurgias, diagnóstico e internação para cães e gatos. Agende sua consulta agora!" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="" />
+  <meta property="twitter:title" content="Caiovet - Clínica Veterinária" />
+  <meta property="twitter:description" content="Clínica veterinária em Itaí/SP especializada em consultas, cirurgias, diagnóstico e internação para cães e gatos. Agende sua consulta agora!" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="src/imgs/favicon.ico" />
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "Caiovet",
+    "description": "Clínica veterinária especializada em consultas, cirurgias, diagnóstico e internação para cães e gatos",
+    "url": "",
+    "telephone": "+5514997457181",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Sete de Setembro, 940 - Centro",
+      "addressLocality": "Itaí",
+      "addressRegion": "São Paulo",
+      "postalCode": "18730-037",
+      "addressCountry": "BR"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+    "serviceType": ["Consultas Veterinárias", "Cirurgias", "Diagnóstico", "Internação", "Exames"],
+    "areaServed": "Itaí, São Paulo, Brasil",
+    "sameAs": ["https://www.instagram.com/caiovet_itai/"]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+    }
+    
+    .emergency-gradient {
+      background: linear-gradient(135deg, #DC2626 0%, #991B1B 50%, #7F1D1D 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes pulse-glow {
+      from {
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+      }
+      to {
+        box-shadow: 0 0 30px rgba(34, 197, 94, 0.8);
+      }
+    }
+    
+    .emergency-pulse {
+      animation: emergency-pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes emergency-pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+      }
+    }
+    
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .emergency-glow {
+      box-shadow: 0 0 40px rgba(220, 38, 38, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Hero Section Completa -->
+    <section class="relative min-h-screen gradient-bg text-white overflow-hidden">
+        <!-- Efeitos de fundo -->
+        <div class="absolute inset-0">
+            <!-- Círculos decorativos -->
+            <div class="absolute top-20 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-green-400/10 rounded-full blur-lg"></div>
+            <div class="absolute bottom-40 left-20 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl"></div>
+            
+            <!-- Padrão de grid sutil -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        </div>
+
+        <!-- Navigation integrada -->
+        <nav class="relative z-50 container mx-auto px-4 py-6 flex items-center justify-between">
+            <!-- Logo com fundo branco arredondado -->
+            <div class="flex items-center space-x-3 float-animation">
+                <div class="w-16 h-16 bg-white rounded-2xl shadow-2xl flex items-center justify-center p-2 hover:scale-110 transition-transform duration-300">
+                    <img src="src/imgs/Logo.webp" alt="Logo CaioVet" class="object-contain w-full h-full" loading="eager">
+                </div>
+                <div class="hidden sm:block">
+                    <h2 class="text-xl font-bold text-white">CaioVet</h2>
+                    <p class="text-sm text-gray-300">Itaí/SP</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Conteúdo principal do hero -->
+        <div class="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-[calc(100vh-100px)]">
+            <div class="text-center max-w-4xl mx-auto space-y-8">
+                <!-- Título principal -->
+                <div class="space-y-4">
+                    <h1 class="text-5xl md:text-7xl font-black leading-tight">
+                        Cuidado Completo para o seu 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                            Melhor Amigo
+                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        Na <strong class="text-yellow-400">Caiovet</strong>, combinamos amor, tecnologia e dedicação para garantir o bem-estar do seu pet em <strong class="text-yellow-400">Itaí/SP</strong>.
+                    </p>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
+                    <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=Olá! Gostaria de agendar uma consulta para meu pet."
+                        target="_blank" rel="noopener noreferrer"
+                        class="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center shadow-2xl hover:shadow-green-500/25 no-underline">
+                        <svg class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0a12 12 0 00-9.42 18.94L0 24l5.2-2.05A12 12 0 1012 0zm6.62 17.18c-.27.77-1.38 1.42-1.9 1.5s-1.03.22-3.57-.75a12.12 12.12 0 01-4.46-3.2 9.4 9.4 0 01-2-3.1c-.05-.12-.48-1.17-.48-2.23a4.3 4.3 0 011.4-3.23A1.54 1.54 0 018.4 6c.18 0 .35.01.5.01.16.01.38-.06.59.45.23.56.77 1.93.84 2.07.07.15.1.34.02.55-.08.2-.12.32-.23.5s-.26.39-.38.53c-.13.13-.27.27-.12.54a8.28 8.28 0 001.46 1.92 8.8 8.8 0 002.65 1.54c.3.13.48.11.66-.07.2-.21.75-.85.95-1.15s.4-.25.67-.15.9.43 1.05.51c.15.07.38.17.45.27.06.1.06.79-.2 1.56z" />
+                        </svg>
+                        Agendar Consulta
+                    </a>
+                    <div class="flex gap-4 flex-wrap justify-center">
+                      <!-- Botão Emergência -->
+                      <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=EMERGÊNCIA! Meu pet precisa de atendimento urgente."
+                          target="_blank" rel="noopener noreferrer"
+                          class="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-full font-bold transition-all duration-300 flex items-center space-x-3 text-sm sm:text-base no-underline outline-none focus:outline-none focus:ring-0 hover:scale-105 transform">   
+                          <svg class="w-6 h-6" viewBox="0 0 14 14" fill="currentColor">
+                              <path d="M 7,0 C 3.177512,0 0,3.0888888 0,7 c 0,3.911112 3.177512,7 7,7 3.822489,0 7,-3.088889 7,-7 C 14,3.0888888 10.822489,0 7,0 z m 0,1.0577778 c 3.389409,0 6.058296,2.7055413 6.058296,5.9422222 0,3.236682 -2.668887,5.942222 -6.058296,5.942222 C 3.610591,12.942222 0.941704,10.236682 0.941704,7 0.941704,3.7633191 3.610591,1.0577778 7,1.0577778 z m -2.008969,0.9644444 0,2.9866667 -3.013452,0 0,3.9822221 3.013452,0 0,2.986667 4.017938,0 0,-2.986667 3.013453,0 0,-3.9822221 -3.013453,0 0,-2.9866667 -4.017938,0 z"/>
+                          </svg>
+                          <span class="hidden sm:inline">Emergência 24h</span>
+                          <span class="sm:hidden">SOS</span>
+                      </a>
+                    </div>
+                </div>
+
+                <!-- Indicadores de confiança -->
+                <div class="flex flex-wrap justify-center items-center gap-8 pt-8 text-sm text-gray-400">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-400">✓</span>
+                        <span>Atendimento 24h</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-400">✓</span>
+                        <span>Equipamentos modernos</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-400">✓</span>
+                        <span>Profissionais qualificados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seta para baixo animada -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-arrow animate-bounce">
+            <div class="flex flex-col items-center space-y-2 text-gray-400 hover:text-white transition-colors cursor-pointer">
+                <span class="text-sm font-medium">Continuar</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            Nossos Serviços
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Oferecemos cuidados completos para cães e gatos com equipamentos modernos e profissionais experientes
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Consultas -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 card-hover fade-in border border-gray-100 group flex flex-col h-full">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <!-- Stethoscope SVG -->
+              <svg class="w-10 h-10" fill="#0382e2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#0382e2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,12.812V16A7,7,0,0,1,7,16V14.92A7.006,7.006,0,0,1,1,8V2A1,1,0,0,1,2,1H5A1,1,0,0,1,5,3H3V8A5,5,0,0,0,13,8V3H11a1,1,0,0,1,0-2h3a1,1,0,0,1,1,1V8a7.006,7.006,0,0,1-6,6.92V16a5,5,0,0,0,10,0V12.812a3,3,0,1,1,2,0Z"></path></g></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Consultas</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed flex-grow">Avaliações completas da saúde do seu pet com diagnósticos precisos.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=Gostaria de agendar uma consulta para meu pet." target="_blank" rel="noopener noreferrer" 
+               class="text-blue-600 font-bold hover:text-blue-800 transition-colors flex items-center group mt-auto">
+              Agendar
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Cirurgias -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 card-hover fade-in border border-gray-100 group flex flex-col h-full">
+            <div class="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <!-- Surgery SVG -->
+              <svg class="w-10 h-10" fill="#c80404" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#c80404"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M236,92c0,30.56494-17.71387,62.00488-52.64844,93.44629A317.34027,317.34027,0,0,1,131.90918,222.98a8.00089,8.00089,0,0,1-7.81836,0c-3.333-1.8667-65.456-37.16992-92.10693-86.98H72a7.99943,7.99943,0,0,0,6.65625-3.5625L88,118.42236l25.34375,38.01514a7.99959,7.99959,0,0,0,13.3125,0L140.28125,136H160a8,8,0,0,0,0-16H136a7.99943,7.99943,0,0,0-6.65625,3.5625L120,137.57764,94.65625,99.5625a7.99959,7.99959,0,0,0-13.3125,0L67.71875,120H24.92969A85.2156,85.2156,0,0,1,20,92,60.02029,60.02029,0,0,1,128,55.95947,60.02029,60.02029,0,0,1,236,92Z"></path> </g></svg>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Cirurgias</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed flex-grow">Procedimentos cirúrgicos seguros com tecnologia avançada.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=Preciso de informações sobre cirurgias para meu pet." target="_blank" rel="noopener noreferrer" 
+               class="text-red-600 font-bold hover:text-red-800 transition-colors flex items-center group mt-auto">
+              Mais informações
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Diagnóstico -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 card-hover fade-in border border-gray-100 group flex flex-col h-full">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="h-10 w-10" fill="#1f9a0e" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#1f9a0e"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M147.378,150.303v283.311h217.242V150.303H147.378z M272.797,379.863h-89.585c-6.185,0-11.198-5.013-11.198-11.198 c0-6.185,5.013-11.198,11.198-11.198h89.585c6.185,0,11.198,5.013,11.198,11.198S278.981,379.863,272.797,379.863z M327.667,326.112H183.212c-6.185,0-11.198-5.013-11.198-11.198s5.013-11.198,11.198-11.198h144.455 c6.185,0,11.198,5.013,11.198,11.198S333.852,326.112,327.667,326.112z M327.667,279.08H183.212 c-6.185,0-11.198-5.013-11.198-11.198s5.013-11.198,11.198-11.198h144.455c6.185,0,11.198,5.013,11.198,11.198 S333.852,279.08,327.667,279.08z M327.667,232.048H183.212c-6.185,0-11.198-5.013-11.198-11.198s5.013-11.198,11.198-11.198 h144.455c6.185,0,11.198,5.013,11.198,11.198S333.852,232.048,327.667,232.048z"></path> </g> </g> <g> <g> <path d="M370.315,67.437h-52.726V51.76c0-7.421-6.017-13.438-13.438-13.438h-7.76C294.878,16.931,277.34,0,255.999,0 c-20.837,0-38.605,17.223-40.356,38.322h-14.515c-7.421,0-13.438,6.017-13.438,13.438v15.677h-46.007 c-38.006,0-69.333,30.444-69.333,68.45v322.005c0,29.809,24.658,54.108,54.467,54.108h258.363 c29.809,0,54.467-24.299,54.467-54.108V135.887C439.648,97.881,408.321,67.437,370.315,67.437z M387.017,444.812 c0,6.185-5.013,11.198-11.198,11.198H136.18c-6.185,0-11.198-5.013-11.198-11.198V139.105c0-6.185,5.013-11.198,11.198-11.198 h239.639c6.185,0,11.198,5.013,11.198,11.198V444.812z"></path> </g> </g> </g></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Diagnóstico</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed flex-grow">Exames laboratoriais e diagnósticos por imagem.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=Gostaria de saber sobre exames diagnósticos." target="_blank" rel="noopener noreferrer" 
+               class="text-green-600 font-bold hover:text-green-800 transition-colors flex items-center group mt-auto">
+              Saiba mais
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Internação -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 card-hover fade-in border border-gray-100 group flex flex-col h-full">
+            <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <!-- Hospital Bed SVG -->
+              <svg class="w-10 h-10" height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#d402ae" stroke="#d402ae"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#8903e2;} </style> <g> <path class="st0" d="M119.729,129.325v-31.38c0-13.496,10.946-24.45,24.449-24.45h78.233c13.504,0,24.45,10.954,24.45,24.45v31.38 c0,4.078-1.093,7.868-2.861,11.248h24c-1.768-3.38-2.861-7.17-2.861-11.248v-31.38c0-13.496,10.946-24.45,24.45-24.45h78.233 c13.503,0,24.449,10.954,24.449,24.45v31.38c0,4.078-1.092,7.868-2.86,11.248h53.209V55.628c0-17.396-14.1-31.504-31.503-31.504 H100.883c-17.402,0-31.504,14.108-31.504,31.504v84.946h53.209C120.822,137.194,119.729,133.403,119.729,129.325z"></path> <polygon class="st0" points="442.62,155.132 69.38,155.132 3.736,324.434 508.264,324.434 "></polygon> <path class="st0" d="M0,336.62v54.209c0,18.643,15.108,33.752,33.752,33.752h444.496c18.643,0,33.752-15.108,33.752-33.752V336.62 H0z"></path> <polygon class="st0" points="70.054,487.876 130.589,487.876 136.093,440.457 64.55,440.457 "></polygon> <polygon class="st0" points="381.419,487.876 441.946,487.876 447.449,440.457 375.906,440.457 "></polygon> </g> </g></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Internação</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed flex-grow">Cuidados intensivos 24h em ambiente controlado e confortável.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=Preciso de informações sobre internação." target="_blank" rel="noopener noreferrer" 
+               class="text-purple-600 font-bold hover:text-purple-800 transition-colors flex items-center group mt-auto">
+              Saiba mais
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre / Setores Destacados -->
+    <section id="sobre" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            Especialidades
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            Áreas de especialização para o melhor cuidado do seu pet
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- Cães -->
+          <div class="bg-white rounded-3xl p-10 shadow-xl fade-in text-center card-hover group">
+            <div class="w-24 h-24 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform">
+              <!-- Dog SVG -->
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.15452 1.01195C5.11987 1.32041 7.17569 2.2474 8.72607 3.49603C9.75381 3.17407 10.8558 2.99995 12 2.99995C13.1519 2.99995 14.261 3.17641 15.2946 3.5025C16.882 2.27488 18.8427 1.31337 20.8354 1.01339C21.2596 0.95092 21.7008 1.16534 21.8945 1.55273C22.6719 3.38958 22.6983 5.57987 22.2202 7.49248L22.2128 7.52213C22.0847 8.03536 21.9191 8.69868 21.3876 8.92182C21.7827 9.89315 22 10.9466 22 12.0526C22 14.825 20.8618 17.6774 19.8412 20.2348L19.8412 20.2348L19.7379 20.4936C19.1182 22.0486 17.7316 23.1196 16.125 23.418L13.8549 23.8397C13.1549 23.9697 12.4562 23.7172 12 23.2082C11.5438 23.7172 10.8452 23.9697 10.1452 23.8397L7.87506 23.418C6.26852 23.1196 4.88189 22.0486 4.26214 20.4936L4.15891 20.2348C3.13833 17.6774 2.00004 14.825 2.00004 12.0526C2.00004 10.9466 2.21737 9.89315 2.6125 8.92182C2.08046 8.69845 1.91916 8.05124 1.7909 7.53658L1.7799 7.49248C1.32311 5.66527 1.23531 3.2968 2.10561 1.55273C2.29827 1.16741 2.72906 0.945855 3.15452 1.01195ZM6.58478 4.44052C5.45516 5.10067 4.47474 5.9652 3.71373 6.98132C3.41572 5.76461 3.41236 4.41153 3.67496 3.18754C4.68842 3.48029 5.68018 3.89536 6.58478 4.44052ZM20.2863 6.98133C19.5303 5.97184 18.5577 5.11195 17.4374 4.45347C18.3364 3.9005 19.3043 3.45749 20.3223 3.17455C20.5884 4.40199 20.5853 5.76068 20.2863 6.98133ZM8.85364 5.56694C9.81678 5.20285 10.8797 4.99995 12 4.99995C13.1204 4.99995 14.1833 5.20285 15.1464 5.56694C18.0554 6.66661 20 9.1982 20 12.0526C20 14.4676 18.9891 16.9876 18.0863 19.238L18.0862 19.2382C18.0167 19.4115 17.9478 19.5832 17.8801 19.7531C17.5291 20.6338 16.731 21.2712 15.7597 21.4516L13.4896 21.8733L12.912 20.5896C12.7505 20.2307 12.3935 19.9999 12 19.9999C11.6065 19.9999 11.2496 20.2307 11.0881 20.5896L10.5104 21.8733L8.24033 21.4516C7.26908 21.2712 6.471 20.6338 6.12001 19.7531C6.05237 19.5834 5.98357 19.4119 5.91414 19.2388L5.91395 19.2384L5.91381 19.238C5.01102 16.9876 4.00004 14.4676 4.00004 12.0526C4.00004 9.1982 5.94472 6.66661 8.85364 5.56694ZM10.5 15.9999C10.1212 15.9999 9.77497 16.2139 9.60557 16.5527C9.43618 16.8915 9.47274 17.2969 9.7 17.5999L11.2 19.5999C11.3889 19.8517 11.6852 19.9999 12 19.9999C12.3148 19.9999 12.6111 19.8517 12.8 19.5999L14.3 17.5999C14.5273 17.2969 14.5638 16.8915 14.3944 16.5527C14.225 16.2139 13.8788 15.9999 13.5 15.9999H10.5ZM9.62134 11.1212C9.62134 11.9497 8.94977 12.6212 8.12134 12.6212C7.29291 12.6212 6.62134 11.9497 6.62134 11.1212C6.62134 10.2928 7.29291 9.62125 8.12134 9.62125C8.94977 9.62125 9.62134 10.2928 9.62134 11.1212ZM16 12.4999C16.8284 12.4999 17.5 11.8284 17.5 10.9999C17.5 10.1715 16.8284 9.49994 16 9.49994C15.1716 9.49994 14.5 10.1715 14.5 10.9999C14.5 11.8284 15.1716 12.4999 16 12.4999Z" fill="#da7707"></path> </g></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Cães</h3>
+            <p class="text-gray-600 leading-relaxed">Cuidados especializados para todas as raças e idades, desde filhotes até idosos.</p>
+          </div>
+
+          <!-- Gatos -->
+          <div class="bg-white rounded-3xl p-10 shadow-xl fade-in text-center card-hover group">
+            <div class="w-24 h-24 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform">
+              <!-- Cat SVG -->
+              <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.0993 10.6602C20.2113 11.9744 19.98 13.5815 19.9801 15C19.9801 18.9062 14.7132 20 12 20C9.28677 20 4.01994 18.9062 4.01994 15C4.01995 13.5815 3.78875 11.9744 4.90066 10.6602M19.0993 10.6602C18.9048 10.4303 18.6692 10.2094 18.384 10M19.0993 10.6602C19.7993 11.0634 19.9781 9.55469 19.9801 9.0625V7.18761C19.9801 5.56261 18.8629 5.00011 17.9053 5.00011C16.9477 5.00011 15.0324 6.5625 14.394 6.5625C13.6279 6.5625 13.4804 6.40636 12 6.40636C10.5197 6.40636 10.3721 6.5625 9.60601 6.5625C8.9676 6.5625 7.05236 5 6.09476 5C5.13715 5 4.01995 5.5625 4.01995 7.1875V9.0625C4.02188 9.55469 4.20072 11.0634 4.90066 10.6602M4.90066 10.6602C5.09519 10.4303 5.33082 10.2094 5.61599 10" stroke="#d600af" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12.8258 16C12.8258 16.1726 12.4647 16.3125 12.0193 16.3125C11.574 16.3125 11.2129 16.1726 11.2129 16C11.2129 15.8274 11.574 15.6875 12.0193 15.6875C12.4647 15.6875 12.8258 15.8274 12.8258 16Z" stroke="#d600af" stroke-width="1.5"></path> <path d="M15.5 13.5938C15.5 14.0252 15.2834 14.375 15.0161 14.375C14.7489 14.375 14.5323 14.0252 14.5323 13.5938C14.5323 13.1623 14.7489 12.8125 15.0161 12.8125C15.2834 12.8125 15.5 13.1623 15.5 13.5938Z" stroke="#d600af" stroke-width="1.5"></path> <path d="M9.5 13.5938C9.5 14.0252 9.28336 14.375 9.01613 14.375C8.74889 14.375 8.53226 14.0252 8.53226 13.5938C8.53226 13.1623 8.74889 12.8125 9.01613 12.8125C9.28336 12.8125 9.5 13.1623 9.5 13.5938Z" stroke="#d600af" stroke-width="1.5"></path> <path d="M22.0004 15.4688C21.5165 15.1562 19.4197 14.375 18.6133 14.375" stroke="#d600af" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20.3871 17.9688C19.9033 17.6562 18.7742 16.875 17.9678 16.875" stroke="#d600af" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 15.4688C2.48387 15.1562 4.58065 14.375 5.3871 14.375" stroke="#d600af" stroke-width="1.5" stroke-linecap="round"></path> <path d="M3.61279 17.9688C4.09667 17.6562 5.2257 16.875 6.03215 16.875" stroke="#d600af" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Gatos</h3>
+            <p class="text-gray-600 leading-relaxed">Atendimento especializado para felinos de todas as raças e idades, desde filhotes até idosos.</p>
+          </div>
+
+          <!-- Exames -->
+          <div class="bg-white rounded-3xl p-10 shadow-xl fade-in text-center card-hover group">
+            <div class="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform">
+              <!-- Lab Test SVG -->
+              <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 2V4H8V18C8 19.1 8.9 20 10 20H14C15.1 20 16 19.1 16 18V4H17V2H7M11 16C10.4 16 10 15.6 10 15S10.4 14 11 14 12 14.4 12 15 11.6 16 11 16M13 12C12.4 12 12 11.6 12 11S12.4 10 13 10 14 10.4 14 11 13.6 12 13 12M14 7H10V4H14V7Z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Exames</h3>
+            <p class="text-gray-600 leading-relaxed">Laboratório completo com exames de sangue, urina, fezes e diagnóstico por imagem.</p>
+          </div>
+        </div>
+
+        <!-- Importante Notice -->
+        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 border-l-4 border-yellow-400 p-8 rounded-2xl fade-in shadow-lg">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-8 w-8 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-xl font-bold text-yellow-800 mb-2">⚠️ Importante:</h4>
+              <p class="text-yellow-700 text-lg leading-relaxed">Realizamos todos os tipos de cirurgias, <strong>exceto cirurgias ortopédicas</strong>. Para casos ortopédicos, fazemos o encaminhamento para especialistas de confiança.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            O que nossos clientes dizem
+          </h2>
+          <p class="text-xl text-gray-600">
+            Depoimentos reais de quem confia na Caiovet
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Depoimento 1 -->
+          <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 fade-in shadow-lg card-hover">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                M
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-gray-800 text-lg">Maria Silva</h4>
+                <div class="flex text-yellow-400 text-lg">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              "Excelente atendimento! Minha gata foi muito bem cuidada durante a cirurgia. Profissionais muito atenciosos e dedicados."
+            </p>
+          </div>
+
+          <!-- Depoimento 2 -->
+          <div class="bg-gradient-to-br from-gray-50 to-green-50 rounded-3xl p-8 fade-in shadow-lg card-hover">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                J
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-gray-800 text-lg">João Santos</h4>
+                <div class="flex text-yellow-400 text-lg">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              "Clínica moderna e bem equipada. Meu cachorro sempre sai de lá bem cuidado. Recomendo para todos os donos de pets!"
+            </p>
+          </div>
+
+          <!-- Depoimento 3 -->
+          <div class="bg-gradient-to-br from-gray-50 to-purple-50 rounded-3xl p-8 fade-in shadow-lg card-hover">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                A
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-gray-800 text-lg">Ana Costa</h4>
+                <div class="flex text-yellow-400 text-lg">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              "Atendimento de emergência salvou a vida do meu gato. Equipe preparada e carinhosa. Eternamente grata!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Sobre o Dr. Caio -->
+  <section id="dr-caio" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+        
+        <!-- Foto do Dr. Caio -->
+        <div class="text-center md:text-left">
+          <img src="src/imgs/dr-caio.jpg" alt="Foto do Dr. Caio" class="rounded-3xl shadow-xl mx-auto md:mx-0 w-72 h-auto object-cover" />
+        </div>
+
+        <!-- Texto -->
+        <div>
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Sobre o Dr. Caio</h2>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            O Dr. Caio é médico-veterinário apaixonado por animais e comprometido com a saúde e bem-estar dos pets de Itaí e região. Com ampla experiência em clínica geral, cirurgias e atendimento de emergência, ele fundou a Caiovet com a missão de oferecer atendimento humanizado, atualizado e acessível para cães e gatos.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contato" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Logo e Descrição -->
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-24 h-24 bg-white to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+              <img src="src/imgs/Logo.webp" alt="Logo Caiovet"  loading="lazy" rel="noopener noreferrer">
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Cuidando com amor e dedicação do seu melhor amigo a mais de 8 anos.
+          </p>
+        </div>
+
+        <!-- Contato -->
+        <div>
+          <h4 class="text-xl font-bold mb-6">Contato</h4>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 flex-shrink-0 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <a href="tel:+5514997457181" class="hover:text-white transition-colors font-semibold">(14) 99745-7181</a>
+            </div>
+            <div class="flex items-start space-x-3">
+              <svg class="w-5 h-5 mt-1 flex-shrink-0 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <div>
+                <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Veterin%C3%A1ria+CAIOVET/data=!4m2!3m1!1s0x0:0xe21eeb7037f36854?sa=X&ved=1t:2428&ictx=111" rel="noopener noreferrer" target="_blank" class="font-semibold hover:text-white transition-colors">Rua Sete de Setembro, 940 <br> Centro Itaí - SP </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horários -->
+        <div>
+          <h4 class="text-xl font-bold mb-6">Horário de Funcionamento</h4>
+          <div class="space-y-3 text-gray-300">
+            <div class="flex justify-between items-center">
+              <span class="font-medium">Segunda - Sexta:</span>
+              <span class="text-green-400 font-semibold">8h - 18h</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-medium">Sábado:</span>
+              <span class="text-green-400 font-semibold">8h - 12h</span>
+            </div>
+            <div>
+              <a href="https://api.whatsapp.com/send/?phone=5514997457181&text=EMERGÊNCIA! Meu pet precisa de atendimento urgente." rel="noopener noreferrer" target="_blank" class="flex justify-center items-center bg-red-600 rounded-lg p-4 mt-4 hover:bg-red-500 text-white font-semibold">Emergência 24h</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+        <p class="text-lg">&copy; 2025 Caiovet. Todos os direitos reservados. <br>   <a href="https://mkt.i3digital.com.br/" class="text-blue-500" target="_blank" rel="noopener noreferrer">
+    Feito por @i3digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+
+    <!-- Emergency Button -->
+      <a
+        href="https://api.whatsapp.com/send/?phone=5514997457181&text=EMERGÊNCIA! Meu pet precisa de atendimento urgente."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-red-600 hover:bg-red-700 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110 emergency-pulse"
+        aria-label="Emergência Veterinária"
+      >
+          <!-- Ícone de alerta -->
+          <svg class="h-8 w-8 text-white" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 14 14" id="svg2" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <metadata id="metadata8"> <rdf:rdf> <cc:work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title></dc:title> </cc:work> </rdf:rdf> </metadata> <defs id="defs6"></defs> <rect width="14" height="14" x="0" y="0" id="canvas" style="fill:none;stroke:none;visibility:hidden"></rect> <path d="M 2,1 C 1,1 0,2 0,3 l 0,1 4,0 1,-1 4,0 1,1 4,0 0,-1 C 14,2 13,1 12,1 z M 0,4.75 0,5.25 C 0,5.25 0.37037551,6 1,6 L 3,6 C 3.5663545,5.9811215 4,5.25 4,5.25 l 0,-0.5 z m 10,0 0,0.5 c 0,0 0.433715,0.75 1,0.75 l 2,0 c 0.566673,0 1,-0.75 1,-0.75 l 0,-0.5 z M 1.5,8 C 0.70762712,8 0,8.573533 0,9.5 0,10.478901 0.72245763,11 1.5,11 l 1,0 C 2.5,11 3,11 3,11.5 3,12 2.5,12 2.5,12 l -2,0 0,1 2,0 C 3.2775424,13 4,12.396919 4,11.46875 4,10.593015 3.2627119,10 2.5,10 l -1,0 C 1.5,10 1,10 1,9.5 1,9 1.5,9 1.5,9 l 2,0 0,-1 z m 5,0 C 5,8 5,9.5 5,9.5 l 0,2 c 0,0 0,1.5 1.5,1.5 l 1,0 C 9,13 9,11.5 9,11.5 l 0,-2 C 9,9.5 9,8 7.5,8 z m 5,0 C 10.707627,8 10,8.573533 10,9.5 c 0,0.978901 0.722458,1.5 1.5,1.5 l 1,0 c 0,0 0.5,0 0.5,0.5 0,0.5 -0.5,0.5 -0.5,0.5 l -2,0 0,1 2,0 C 13.277542,13 14,12.396919 14,11.46875 14,10.593015 13.262712,10 12.5,10 l -1,0 C 11.5,10 11,10 11,9.5 11,9 11.5,9 11.5,9 l 2,0 0,-1 z M 6,9.75 C 6,9.75 6,9 6.75,9 l 0.5,0 C 8,9 8,9.75 8,9.75 l 0,1.5 C 8,11.25 8,12 7.25,12 l -0.5,0 C 6,12 6,11.25 6,11.25 z" id="emergency-phone" style="color:#ffffff;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"></path> </g></svg>
+      </a>
+
+      <!-- WhatsApp Button -->
+      <a
+        href="https://api.whatsapp.com/send/?phone=5514997457181&text=Olá! Gostaria de saber mais sobre os serviços da Caiovet."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[#25D366] hover:bg-[#1EBE5D] text-white w-16 h-16 flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110 pulse-glow"
+        aria-label="Fale conosco no WhatsApp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0a12 12 0 00-9.42 18.94L0 24l5.2-2.05A12 12 0 1012 0zm6.62 17.18c-.27.77-1.38 1.42-1.9 1.5s-1.03.22-3.57-.75a12.12 12.12 0 01-4.46-3.2 9.4 9.4 0 01-2-3.1c-.05-.12-.48-1.17-.48-2.23a4.3 4.3 0 011.4-3.23A1.54 1.54 0 018.4 6c.18 0 .35.01.5.01.16.01.38-.06.59.45.23.56.77 1.93.84 2.07.07.15.1.34.02.55-.08.2-.12.32-.23.5s-.26.39-.38.53c-.13.13-.27.27-.12.54a8.28 8.28 0 001.46 1.92 8.8 8.8 0 002.65 1.54c.3.13.48.11.66-.07.2-.21.75-.85.95-1.15s.4-.25.67-.15.9.43 1.05.51c.15.07.38.17.45.27.06.1.06.79-.2 1.56z"/>
+        </svg>
+      </a>
+    </div>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        
+        // Close mobile menu if open
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // WhatsApp button periodic pulse effect
+    setInterval(() => {
+      const whatsappBtn = document.querySelector('a[href*="whatsapp"].fixed');
+      if (whatsappBtn) {
+        whatsappBtn.classList.add('pulse-glow');
+        setTimeout(() => {
+          whatsappBtn.classList.remove('pulse-glow');
+        }, 2000);
+      }
+    }, 8000);
+
+    // Emergency button periodic pulse effect
+    setInterval(() => {
+      const emergencyBtn = document.querySelector('.emergency-pulse');
+      if (emergencyBtn) {
+        emergencyBtn.classList.add('emergency-pulse');
+        setTimeout(() => {
+          emergencyBtn.classList.remove('emergency-pulse');
+        }, 2000);
+      }
+    }, 5000);
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.classList.add('shadow-2xl');
+        header.classList.remove('shadow-lg');
+      } else {
+        header.classList.remove('shadow-2xl');
+        header.classList.add('shadow-lg');
+      }
+    });
+
+    // Loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+      
+      // Trigger initial fade-in animations with stagger
+      setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach((el, index) => {
+          setTimeout(() => {
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+              el.classList.add('visible');
+            }
+          }, index * 150);
+        });
+      }, 300);
+    });
+  </script>
+</body>
+</html>
